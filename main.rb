@@ -1,7 +1,9 @@
 require 'gmail'
 require 'nokogiri'
 
-gmail = Gmail.connect!(ENV['GMAIL_USERNAME'], ENV['GMAIL_PASSWORD'])
+username = ENV['GMAIL_USERNAME']
+password = ENV['GMAIL_PASSWORD']
+gmail = Gmail.connect!(username, password)
 
 emails = gmail.inbox.find(from: 'alert@indeed.com')
 emails.map do |email|
